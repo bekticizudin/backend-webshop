@@ -12,8 +12,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
         @Override
         public void addCorsMappings(CorsRegistry registry) {
-            registry.addMapping("/proizvodi/**") // Prilagodite putanju
-                    .allowedOrigins("http://localhost:4200") // Prilagodite na svoju adresu Angular aplikacije
+            registry.addMapping("/proizvodi/**")
+                    .allowedOrigins("http://localhost:4200")
                     .allowedMethods("GET", "POST", "PUT", "DELETE")
                     .allowCredentials(true);
         }

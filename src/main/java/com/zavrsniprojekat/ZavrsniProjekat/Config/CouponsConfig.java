@@ -12,8 +12,8 @@ public class CouponsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/kuponi/**") // Prilagodite putanju
-                .allowedOrigins("http://localhost:4200") // Prilagodite na svoju adresu Angular aplikacije
+        registry.addMapping("/kuponi/**")
+                .allowedOrigins("http://localhost:4200")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowCredentials(true);
     }

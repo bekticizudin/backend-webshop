@@ -12,8 +12,8 @@ public class DiscountConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/popust/**") // Prilagodite putanju
-                .allowedOrigins("http://localhost:4200") // Prilagodite na svoju adresu Angular aplikacije
+        registry.addMapping("/popust/**")
+                .allowedOrigins("http://localhost:4200")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowCredentials(true);
     }
