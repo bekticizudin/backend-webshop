@@ -1,4 +1,20 @@
 package com.zavrsniprojekat.ZavrsniProjekat.Config;
 
-public class ContactPageConfig {
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+@EnableWebMvc
+public class ContactPageConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/kontakt/**") // Prilagodite putanju
+                .allowedOrigins("http://localhost:4200") // Prilagodite na svoju adresu Angular aplikacije
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowCredentials(true);
+    }
 }
